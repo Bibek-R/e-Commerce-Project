@@ -102,23 +102,13 @@ namespace Practise.Tests
 			Thread.Sleep(2000);
 			Cart.ApplyCoupon(s_driver).Click();
 			Thread.Sleep(4000);
-			//try
-			//{
-			//	Assert.That(15, Is.EqualTo(Cart.GetDiscount(s_driver)), "15% should have been applied!");
-			//}
-
-			//catch (Exception)
-			//{
-
-			//	Console.WriteLine(Cart.DiscountText(Cart.GetDiscount(s_driver)) + "15% should have been applied!");
-			//}
-			
-			Thread.Sleep(2000); //frequent threadsleep to allow element to load up
+			 //frequent threadsleep to allow element to load up
 			Cart.ProceedToCheckout(s_driver).Click();
 			Thread.Sleep(2000);
 
 			//creating Customer Object by retrieving information stored in environment variable           
-			Customer cust = new Customer (
+			Customer cust = new Customer 
+			(
 				Environment.GetEnvironmentVariable("firstName"),
 				Environment.GetEnvironmentVariable("lastName"),
 				Environment.GetEnvironmentVariable("streetAddress"),
@@ -126,7 +116,7 @@ namespace Practise.Tests
 				Environment.GetEnvironmentVariable("postcode"),
 				Environment.GetEnvironmentVariable("phone"),
 				Environment.GetEnvironmentVariable("email")
-				);
+			);
 
             //retrieve customer details in order to fill the form after making sure the textbox are cleared.
             Checkout.FirstName(s_driver).Clear();
@@ -155,6 +145,7 @@ namespace Practise.Tests
 			OrderReceivedPage.MyAccountMenuItem(s_driver).Click();
 			MyAccount.OrdersLink(s_driver).Click();
 			Thread.Sleep(2000);
+
 			//retrieving our orderno from a list of order history
             Console.WriteLine(OrdersHistory.GetOrderNoFromOrdersPage(s_driver)[0]);
 			MyAccount.LogoutButton(s_driver).Click();
