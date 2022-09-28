@@ -57,15 +57,15 @@ namespace Practise.StepDefinitions
         [When(@"I click on the cart menu item")]
         public void WhenIClickOnTheCartMenuItem()
         {
-            Products.Cart(s_driver).Click();
+           Products.Cart(s_driver).Click();
         }
 
         [When(@"I enter the coupon")]
         public void WhenIEnterTheCoupon()
         {
             
-            Cart.CouponTextBox(s_driver).Click();
-            Cart.EnterCoupon(s_driver).SendKeys(Environment.GetEnvironmentVariable("coupon"));
+           Cart.CouponTextBox(s_driver).Click();
+           Cart.EnterCoupon(s_driver).SendKeys(Environment.GetEnvironmentVariable("coupon"));
         }
 
 
@@ -73,28 +73,28 @@ namespace Practise.StepDefinitions
         [Then(@"I can enter the coupon code")]
         public void ThenICanEnterTheCouponCode()
         {
-            Cart.ApplyCoupon(s_driver).Click();
-            Thread.Sleep(2000);
-            string text = s_driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[2]/main/article/div/div/div[1]/div")).Text;
-            Thread.Sleep(3000);
-            Assert.IsTrue(text.Contains("Coupon code applied successfully."));
-            Console.WriteLine("Coupon code applied successfully.");
+           Cart.ApplyCoupon(s_driver).Click();
+           Thread.Sleep(2000);
+           string text = s_driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[2]/main/article/div/div/div[1]/div")).Text;
+           Thread.Sleep(3000);
+           Assert.IsTrue(text.Contains("Coupon code applied successfully."));
+           Console.WriteLine("Coupon code applied successfully.");
 
         }
 
         [Given(@"I am logged in")]
         public void GivenIAmLoggedIn()
         {
-            s_driver = new ChromeDriver();
-            s_driver.Url = Environment.GetEnvironmentVariable("url");
-            MyAccount.UsernameTextBox(s_driver).SendKeys(Environment.GetEnvironmentVariable("username"));
-            MyAccount.PasswordTextBox(s_driver).SendKeys(Environment.GetEnvironmentVariable("password") + Keys.Enter);
+           s_driver = new ChromeDriver();
+           s_driver.Url = Environment.GetEnvironmentVariable("url");
+           MyAccount.UsernameTextBox(s_driver).SendKeys(Environment.GetEnvironmentVariable("username"));
+           MyAccount.PasswordTextBox(s_driver).SendKeys(Environment.GetEnvironmentVariable("password") + Keys.Enter);
         }
 
         [When(@"I select the '([^']*)' menu item")]
         public void WhenISelectTheMenuItem(string orders)
         {
-            OrderReceivedPage.MyAccountMenuItem(s_driver).Click();
+           OrderReceivedPage.MyAccountMenuItem(s_driver).Click();
             
         }
 
