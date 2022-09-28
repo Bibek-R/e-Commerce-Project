@@ -1,0 +1,26 @@
+<test-run id="2" duration="17.083036" testcasecount="1" total="1" passed="1" failed="0" inconclusive="0" skipped="0" result="Passed" start-time="2022-09-25T 12:11:50Z" end-time="2022-09-25T 12:12:07Z">
+  <test-suite type="Assembly" name="Practise.dll" fullname="C:\Users\BibekRai\Documents\Practice\uk.co.edgewords.nfocusseptemberwebdriver\uk.co.edgewords.nfocusseptemberwebdriver\bin\Debug\net6.0\Practise.dll" total="1" passed="1" failed="0" inconclusive="0" skipped="0" result="Passed" start-time="2022-09-25T 12:11:50Z" end-time="2022-09-25T 12:12:07Z" duration="17.083036">
+    <test-suite type="TestSuite" name="Practise" fullname="Practise" total="1" passed="1" failed="0" inconclusive="0" skipped="0" result="Passed" start-time="2022-09-25T 12:11:50Z" end-time="2022-09-25T 12:12:07Z" duration="17.083036">
+      <test-suite type="TestSuite" name="Tests" fullname="Practise.Tests" total="1" passed="1" failed="0" inconclusive="0" skipped="0" result="Passed" start-time="2022-09-25T 12:11:50Z" end-time="2022-09-25T 12:12:07Z" duration="17.083036">
+        <test-suite type="TestFixture" name="ProductSearch" fullname="Practise.Tests.ProductSearch" classname="Practise.Tests.ProductSearch" total="1" passed="1" failed="0" inconclusive="0" skipped="0" result="Passed" start-time="2022-09-25T 12:11:50Z" end-time="2022-09-25T 12:12:07Z" duration="17.083036">
+          <test-case name="SearchItem" fullname="Practise.Tests.ProductSearch.SearchItem" methodname="SearchItem" classname="ProductSearch" result="Passed" start-time="2022-09-25T 12:11:50Z" end-time="2022-09-25T 12:12:07Z" duration="17.083036" asserts="0" seed="1843624211">
+            <output><![CDATA[Entering login details
+User is logged in!
+Subtotal 18.00
+discount Flat rate: £3.95
+Shipping options will be updated during checkout.
+Calculate shipping
+Coupon Applied!
+Subtotal 18
+Shipping 3.95
+Total 21.95
+0% discount is applied.
+
+]]></output>
+          </test-case>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+    <errors />
+  </test-suite>
+</test-run>
