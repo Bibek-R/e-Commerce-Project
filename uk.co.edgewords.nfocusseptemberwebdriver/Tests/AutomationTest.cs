@@ -65,7 +65,7 @@ namespace Practise.Tests
 			catch (Exception)
 			{
 
-			 Console.WriteLine(Cart.DiscountText(Cart.GetDiscount(s_driver)) + "15% should have been applied!");
+			 Console.WriteLine(Cart.DiscountText(Cart.GetDiscount(s_driver)) + " 15% should have been applied!");
 			}
 			
 			Cart.RemoveCoupon(s_driver).Click();////invokes the remove coupon function inside the cart page object

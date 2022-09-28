@@ -103,7 +103,8 @@ namespace Practise.StepDefinitions
         public void ThenIShouldBeAbleToSeeTheOrders()
         {
             MyAccount.OrdersLink(s_driver).Click();
-            //Assert.That(s_driver.FindElement(By.CssSelector(".entry-header")), Is.EqualTo("Orders"), "Unable to see orders.");
+            Assert.That(s_driver.FindElement(By.CssSelector(".entry-title")).Text, Is.EqualTo("Orders"), "Unable to see orders.");
+            
         }
 
 

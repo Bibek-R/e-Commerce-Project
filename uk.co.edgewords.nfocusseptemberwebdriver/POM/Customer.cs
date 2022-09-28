@@ -8,7 +8,7 @@ namespace Practise.POM
 {
     internal class Customer
     {
-        //private class fields
+        //private class fields stored
         private static string s_firstName;
         private static string s_lastName;
         private static string s_streetAddress;

@@ -14,7 +14,7 @@ namespace Practise.POM
         private static IWebElement s_element = null;
 
 
-        public static IWebElement UsernameTextBox(IWebDriver _driver) //selects username text box when clicked.//copy for others too
+        public static IWebElement UsernameTextBox(IWebDriver _driver) //selects username text box when clicked.
             
         {
             s_element = _driver.FindElement(By.Id("username"));
