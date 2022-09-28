@@ -1,4 +1,4 @@
-﻿@Smoke
+﻿@Scenarios
 Feature: Feature1
 
 A short summary of the feature
@@ -9,7 +9,7 @@ Scenario: Correct Login Credentials
 	When I login with 'ryetike3' and 'nFocusAug22'
 	Then I am logged in
 
-@Regression
+@TC1
 Scenario Outline: Applying Coupon	
 	Given I have a product in the cart	
 	When I click on the cart menu item

@@ -24,8 +24,7 @@ namespace Practise.Utilities
 
         [TearDown]
         public void TearDown()
-        {
-            //driver.Close(); //Close current tab
+        { 
             // Wait 3s to check everything worked
             s_driver.Quit(); //Close all tabs, windows for session, closes webdriver session.
         }

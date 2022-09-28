@@ -13,9 +13,10 @@ using NUnit.Framework;
 
 namespace Practise.Tests
 {
+	[TestFixture, Category ("TestCases")]
     internal class AutomationTest : Hooks
     {
-		[Test]       //Main Method 
+		[Test, Order(1)]       //Main Method 
 		public void Main()
 		{
 			Test1();
@@ -76,6 +77,7 @@ namespace Practise.Tests
 			
 		}
 
+        [Test, Order(2)]
 		public void Test2()
         {
 			Thread.Sleep(2000);

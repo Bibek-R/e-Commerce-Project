@@ -21,14 +21,14 @@ namespace Practise.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Feature1")]
-    [NUnit.Framework.CategoryAttribute("Smoke")]
+    [NUnit.Framework.CategoryAttribute("Scenarios")]
     public partial class Feature1Feature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private static string[] featureTags = new string[] {
-                "Smoke"};
+                "Scenarios"};
         
 #line 1 "TestCases.feature"
 #line hidden
@@ -107,11 +107,11 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Applying Coupon")]
-        [NUnit.Framework.CategoryAttribute("Regression")]
+        [NUnit.Framework.CategoryAttribute("TC1")]
         public void ApplyingCoupon()
         {
             string[] tagsOfScenario = new string[] {
-                    "Regression"};
+                    "TC1"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Applying Coupon", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 13
