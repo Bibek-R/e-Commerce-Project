@@ -18,8 +18,8 @@ namespace Practise.Tests
 		[Test]       //Main Method 
 		public void Main()
 		{
-			//Test1();
-			Test2();
+			Test1();
+			//Test2();
 		}
 
 
