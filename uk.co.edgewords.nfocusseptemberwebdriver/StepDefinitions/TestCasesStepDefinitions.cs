@@ -23,7 +23,7 @@ namespace Practise.StepDefinitions
             _scenarioContext = sc;
             this.s_driver = (IWebDriver)_scenarioContext["myDriver"];
         }
-       
+
 
         [Given(@"I am logged in")]
         public void GivenIAmLoggedIn()
