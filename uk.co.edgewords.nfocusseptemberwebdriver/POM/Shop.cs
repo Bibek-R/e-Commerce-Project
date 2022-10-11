@@ -9,12 +9,27 @@ namespace Practise.POM
 {
     internal class Shop  
     {
-        private static IWebElement s_element;
+        IWebDriver driver;
 
-        public static IWebElement ProductSelection(IWebDriver _driver) //navigates to products info page
+        public Shop(IWebDriver driver)
         {
-            s_element = _driver.FindElement(By.CssSelector("li.product:nth-child(3)"));
-            return s_element;
+            this.driver = driver;
         }
+
+        IWebElement productSelection => driver.FindElement(By.CssSelector("li.product:nth-child(3)"));
+
+        public void ProductSelection()
+        {
+            productSelection.Click();
+        }
+
+
+        //private static IWebElement s_element;
+
+        //public static IWebElement ProductSelection(IWebDriver _driver) //navigates to products info page
+        //{
+        //    s_element = _driver.FindElement(By.CssSelector("li.product:nth-child(3)"));
+        //    return s_element;
+        //}
     }
 }

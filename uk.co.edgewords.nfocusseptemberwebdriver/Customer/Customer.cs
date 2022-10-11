@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Practise.POM
+namespace Practise.Customer
 {
     internal class Customer
     {
@@ -31,7 +31,7 @@ namespace Practise.POM
             {
                 s_phone = long.Parse(phone);  //converting long to string
             }
-            catch (Exception e) 
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 Console.WriteLine("You might have accidentally provided either a " +

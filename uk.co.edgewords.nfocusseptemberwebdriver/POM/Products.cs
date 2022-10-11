@@ -9,17 +9,37 @@ namespace Practise.POM
 {
     internal class Products
     {
-        private static IWebElement s_element;
+        IWebDriver driver;
+        //private static IWebElement s_element;
 
-        public static IWebElement AddToCart(IWebDriver _driver)//add this product to cart
+        public Products(IWebDriver driver)
         {
-            s_element = _driver.FindElement(By.Name("add-to-cart"));
-            return s_element;
+            this.driver = driver;
         }
-        public static IWebElement Cart(IWebDriver _driver)//navigates to cart page
+
+        IWebElement addToCart => driver.FindElement(By.Name("add-to-cart"));
+        IWebElement cart => driver.FindElement(By.LinkText("Cart"));
+
+
+        public void AddToCart()
         {
-            s_element = _driver.FindElement(By.LinkText("Cart"));
-            return s_element;
+            addToCart.Click();
         }
+
+        public void CartMenuItem()
+        {
+            cart.Click();
+        }
+
+        //public static IWebElement AddToCart(IWebDriver _driver)//add this product to cart
+        //{
+        //    s_element = _driver.FindElement(By.Name("add-to-cart"));
+        //    return s_element;
+        //}
+        //public static IWebElement Cart(IWebDriver _driver)//navigates to cart page
+        //{
+        //    s_element = _driver.FindElement(By.LinkText("Cart"));
+        //    return s_element;
+        //}
     }
 }

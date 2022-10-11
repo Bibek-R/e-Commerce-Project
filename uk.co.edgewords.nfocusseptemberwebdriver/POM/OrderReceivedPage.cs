@@ -10,16 +10,29 @@ namespace Practise.POM
 {
     internal class OrderReceivedPage
     {
-        private static IWebElement s_element; //private field
-        public static IWebElement GetOrderNo(IWebDriver _driver) //retrieve order no after placing order
+        IWebDriver driver;
+
+        public OrderReceivedPage(IWebDriver driver)
         {
-            s_element = _driver.FindElement(By.CssSelector(".woocommerce-order-overview__order > strong:nth-child(1)"));
-            return s_element;
+            this.driver = driver;
         }
-        public static IWebElement MyAccountMenuItem(IWebDriver _driver)
+
+        IWebElement myAccountMenuItem => driver.FindElement(By.LinkText("My account"));
+
+        public void MyAccountMenuItem()
         {
-            s_element = _driver.FindElement(By.LinkText("My account"));
-            return s_element;
+            myAccountMenuItem.Click();
         }
+        //private static IWebElement s_element; //private field
+        //public static IWebElement GetOrderNo(IWebDriver _driver) //retrieve order no after placing order
+        //{
+        //    s_element = _driver.FindElement(By.CssSelector(".woocommerce-order-overview__order > strong:nth-child(1)"));
+        //    return s_element;
+        //}
+        //public static IWebElement MyAccountMenuItem(IWebDriver _driver)
+        //{
+        //    s_element = _driver.FindElement(By.LinkText("My account"));
+        //    return s_element;
+        //}
     }
 }

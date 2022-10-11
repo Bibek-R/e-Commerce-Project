@@ -3,21 +3,19 @@ Feature: Feature1
 
 A short summary of the feature
 
+Background:
+	Given I am logged in
 
-Scenario: Correct Login Credentials
-	Given I am on the login page
-	When I login with 'ryetike3' and 'nFocusAug22'
-	Then I am logged in
 
 @TC1
-Scenario Outline: Applying Coupon	
-	Given I have a product in the cart	
-	When I click on the cart menu item
+Scenario: Applying Coupon
+	When I have a product in the cart
+	And I click on the cart menu item
 	And I enter the coupon
-	Then I can enter the coupon code
+	Then I can check coupon is 15% off
 
 @TC2
-Scenario Outline: Look if order is placed
-         Given I am logged in
-		 When I select the 'Orders' menu item
-		 Then I should be able to see the orders
+Scenario: Check if order #3406 is shown in the Account Page
+	When I am in the MyAccount page     
+	And I click the 'Orders' menu item
+	Then I should be able to see the order
