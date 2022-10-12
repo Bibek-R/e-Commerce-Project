@@ -18,7 +18,6 @@ namespace Practise.POM
             this.driver = driver;
         }
 
-        
         //Locators
 
         IWebElement couponTextBox => driver.FindElement(By.Id("coupon_code"));
@@ -87,6 +86,5 @@ namespace Practise.POM
 
         }
 
-       
     }
 }

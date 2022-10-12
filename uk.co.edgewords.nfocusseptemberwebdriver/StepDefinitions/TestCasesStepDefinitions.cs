@@ -6,6 +6,7 @@ using Practise.POM;
 using OpenQA.Selenium.Firefox;
 using static Practise.StepDefinitions.Hooks;
 using NUnit.Framework;
+using Practise.Utilities;
 
 namespace Practise.StepDefinitions
 {
@@ -17,6 +18,7 @@ namespace Practise.StepDefinitions
         private MyAccount loggedIn;
         private Products products;
         private Cart carts;
+        private HelpersInstance wait;
 
         public TestCasesStepDefinitions(ScenarioContext sc)
         {
@@ -29,14 +31,12 @@ namespace Practise.StepDefinitions
         public void GivenIAmLoggedIn()
         {
             MyAccount login = new MyAccount(s_driver);
-            //login.SetUsername(username);
+  
             login.UsernameTextBox(Environment.GetEnvironmentVariable("username")); //uses enviroment variable to get login credentials
             login.PasswordTextBox(Environment.GetEnvironmentVariable("password"));
             login.LoginButton();
             loggedIn = login;
-
-            //Assert condition - check for dashboard 
-            // Assert.That
+     
         }
 
         [When(@"I have a product in the cart")]
@@ -71,15 +71,22 @@ namespace Practise.StepDefinitions
         [Then(@"I can check coupon is (.*)% off")]
         public void ThenICanCheckCouponIsOff(int p0)
         {
-            Thread.Sleep(3000);//need to change
+            wait = new HelpersInstance(s_driver);
+            wait.WaitForElm(3, By.CssSelector("#post-5 > div > div > div.cart-collaterals > div > table > tbody > tr.cart-discount.coupon-edgewords > td > span"));
             decimal discount = carts.GetDiscount(carts.GetSubTotalExtract(), carts.GetDiscountAmount());
-            Console.WriteLine(discount);
             try
             {
                 Assert.That ((int)discount, Is.EqualTo( p0), "15% should have been applied!");
             }
             catch (Exception)
             {
+            }
+            finally
+            {
+                wait = new HelpersInstance(s_driver);
+                wait.WaitForElm(2, By.ClassName("remove"));
+                carts.RemoveCoupon();
+                carts.EmptyCart();
             }
         }
 
@@ -88,29 +95,28 @@ namespace Practise.StepDefinitions
         [When(@"I am in the MyAccount page")]
         public void WhenIAmInTheMyAccountPage()
         {
-            Thread.Sleep(9000);
-            IWebElement accountPageElement = s_driver.FindElement(By.ClassName("woocommerce-MyAccount-navigation"));
-            //IWebElement navigationMenuItem = accountPageElement.FindElement(By.TagName("nav"));
-            bool accountPage = (accountPageElement.GetAttribute("class").Contains("woocommerce-MyAccount-navigation")) ? true : false;
-            Assert.That(accountPage, Is.True, "We did not login");
+            wait = new HelpersInstance(s_driver);
+            wait.WaitForElm(3, By.ClassName("woocommerce-MyAccount-navigation"));
+            Assert.That(loggedIn.IsNavigationMenuExist(), Is.True, "Navigation menu not displayed!");
         }
 
-        [When(@"I click the '([^']*)' menu item")]
-        public void WhenIClickTheMenuItem(string orders)
+        [When(@"I click the Orders menu item")]
+        public void WhenIClickTheOrdersMenuItem()
         {
-            throw new PendingStepException();
+            loggedIn.OrdersMenuItem();
         }
+
 
         [Then(@"I should be able to see the order")]
         public void ThenIShouldBeAbleToSeeTheOrder()
         {
-            throw new PendingStepException();
+            
+            OrdersHistory ordersHistory = new OrdersHistory();
+            ordersHistory.GetOrderNoFromOrdersPage(s_driver);
+            Assert.That(loggedIn.IsOrdersTableExist(), Is.True, "Orders table not displayed!");
         }
 
-        //TakeScreenshot(driver, "fullpage");
-        //IWebElement form = driver.FindElement(By.Id("right-column"));
-        //TakeScreenshotElement(form, "theform");
-        //TestContext.AddTestAttachment(@"C:\Screenshots\fullpage.png");
+        
 
 
     }

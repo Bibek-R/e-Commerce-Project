@@ -22,7 +22,7 @@ namespace Practise.StepDefinitions
         {
             _scenarioContext = sc;
         }
-
+       
 
         [BeforeScenario]
         public void Setup()
@@ -39,12 +39,8 @@ namespace Practise.StepDefinitions
         [AfterScenario]
         public void TearDown()
         {
-            //Product remove, coupon remove, logout  
-            //Delete all created objects - objectname.dispose()  e.g. carts.dispose();
-            // Wait 3s to check everything worked
-            //Cart.RemoveCoupon(s_driver).Click();
-            //Cart.EmptyCart(s_driver).Click();
-            //s_driver.Quit(); //Close all tabs, windows for session, closes webdriver session.
+            
+            s_driver.Quit(); //Close all tabs, windows for session, closes webdriver session.
         }
     }
 }

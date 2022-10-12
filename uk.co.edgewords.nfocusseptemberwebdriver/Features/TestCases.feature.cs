@@ -148,7 +148,7 @@ this.FeatureBackground();
  testRunner.When("I am in the MyAccount page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 20
- testRunner.And("I click the \'Orders\' menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click the Orders menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 21
  testRunner.Then("I should be able to see the order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

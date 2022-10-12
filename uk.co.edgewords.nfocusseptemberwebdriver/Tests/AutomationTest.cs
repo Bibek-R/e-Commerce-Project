@@ -20,7 +20,6 @@ namespace Practise.Tests
         {
             //Test1();
             //Test2();
-            Test3();
         }
 
 
@@ -153,14 +152,6 @@ namespace Practise.Tests
 
 
         //}
-        public void Test3()
-        {
-            //Cart cart = new Cart(s_driver);
-            //cart.CouTexBox();
-            //cart.EntCou();
-            //Console.Write(s_driver.PageSource);
-
-        }
 
     }
 }
