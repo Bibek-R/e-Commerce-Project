@@ -11,8 +11,9 @@ namespace Practise.POM
 {
     internal class Checkout
     {
-        IWebDriver driver;
+        IWebDriver driver;  //Field for service methods to use
 
+        //Constructor to get driver from test for use in the class
         public Checkout(IWebDriver driver)
         {
             this.driver = driver;
@@ -28,6 +29,7 @@ namespace Practise.POM
         IWebElement phone => driver.FindElement(By.Name("billing_phone"));
         IWebElement paymentMethod => driver.FindElement(By.CssSelector("li.wc_payment_method:nth-child(1)>label:nth-child(2)"));
         IWebElement placeOrder => driver.FindElement(By.Name("woocommerce_checkout_place_order"));
+
 
         //Service Methods
 

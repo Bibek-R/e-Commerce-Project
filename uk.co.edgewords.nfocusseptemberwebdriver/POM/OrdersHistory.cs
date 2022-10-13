@@ -13,7 +13,6 @@ namespace Practise.POM
 		//get list of orders from order history
 		public void GetOrderNoFromOrdersPage(IWebDriver _driver)
 		{
-            //HelpersStatic.TakeScreenshot(_driver, "fullpage");
             IWebElement form = _driver.FindElement(By.CssSelector(".woocommerce-orders-table"));
             HelpersStatic.TakeScreenshotElement(form, "orderhistory");
             TestContext.AddTestAttachment(@"C:\Screenshots\orderhistory.png");

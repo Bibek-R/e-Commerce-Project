@@ -1,5 +1,5 @@
 ﻿@Scenarios
-Feature: Feature1
+Feature: e-Commerce website Test
 
 A short summary of the feature
 
@@ -12,7 +12,7 @@ Scenario: Applying Coupon
 	When I have a product in the cart
 	And I click on the cart menu item
 	And I enter the coupon
-	Then I can check coupon is 15% off
+	Then I can check coupon is '15'% off
 
 @TC2
 Scenario: Check if order #3406 is shown in the Account Page

@@ -13,11 +13,13 @@ namespace Practise.POM
     {
           IWebDriver driver; //Field for service methods to use
 
+        //Constructor to get driver from test for use in the class
         public MyAccount(IWebDriver driver)
         {
             this.driver = driver;
         }
 
+        //Locators
        IWebElement shop => driver.FindElement(By.LinkText("Shop"));
        IWebElement usernameTextBox => driver.FindElement(By.Id("username"));
        IWebElement passwordTextBox => driver.FindElement(By.Id("password"));
@@ -26,8 +28,10 @@ namespace Practise.POM
        IWebElement ordersLink => driver.FindElement(By.LinkText("Orders"));
        IWebElement logoutButton => driver.FindElement(By.LinkText("Logout"));
        IWebElement navigationMenu => driver.FindElement(By.ClassName("woocommerce-MyAccount-navigation"));
-        IWebElement ordersTable => driver.FindElement(By.CssSelector(".woocommerce-orders-table"));
+       IWebElement ordersTable => driver.FindElement(By.CssSelector(".woocommerce-orders-table"));
 
+
+        //Service Methods
         public void ShopPage()
         {
             shop.Click();
