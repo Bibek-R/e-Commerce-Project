@@ -1,4 +1,4 @@
-﻿using OpenQA.Selenium;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,45 +35,45 @@ namespace Practise.POM
 
 
         //Service Methods
-        public decimal GetDiscountAmount()
+        public decimal GetDiscountAmount()   //Method to get Discount
         {
             return decimal.Parse(discountAmount);
         }
-        public decimal GetSubTotalExtract()
+        public decimal GetSubTotalExtract()    //Method to get subtotal extract
         {
           return decimal.Parse(subTotalExtract);
         }
         
-        public void SelectCouponTextBox()   //
+        public void SelectCouponTextBox()   //Method to select Coupon text before entering coupon
         {
             couponTextBox.Click();
         }
 
-        public void EnterCoupon()
+        public void EnterCoupon(string coupon)  //Method to enter the coupon code 
         {
             enterCoupon.SendKeys("edgewords");
         }
 
-        public void ApplyCoupon()
+        public void ApplyCoupon()  //Method to apply the coupon
         {
             applyCoupon.Click();
         }
 
-        public void MyAccountMenuItem()
+        public void MyAccountMenuItem()    //Method to click on the MyAccount option
         {
             myAccountMenuItem.Click();
         }
 
-        public void EmptyCart()
+        public void EmptyCart()  //Method to empty the cart
         {
            emptyCart.Click();
         }
 
-        public void RemoveCoupon()
+        public void RemoveCoupon()   //Method to remove the applied coupon
         {
            removeCoupon.Click();
         }
-        public void ProceedToCheckout()
+        public void ProceedToCheckout()  //Method to click to checkout
         {
           proceedToCheckout.Click();
         }
